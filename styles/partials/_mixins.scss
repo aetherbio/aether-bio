@@ -1,0 +1,36 @@
+@mixin font-overpass(){
+  font-family: 'Overpass', sans-serif;
+}
+
+@mixin font-raj(){
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (max-width: $bp-desktop) { @content ; }
+  }
+  @if $point == tablet {
+    @media (max-width: $bp-tablet) { @content ; }
+  }
+  @if $point == mobile {
+    @media (max-width: $bp-mobile) { @content ; }
+  }
+  @if $point == gt_tablet {
+    @media (min-width: $bp-tablet + 1px) { @content ; }
+  }
+  @if $point == gt_desktop {
+    @media (min-width: $bp-desktop + 1px) { @content ; }
+  }
+  @if $point == desktop_only {
+    @media (min-width: $bp-tablet + 1px) and (max-width: none) { @content ; }
+  }
+  @if $point == tablet_only {
+    @media (min-width: $bp-mobile + 1px) and (max-width: $bp-tablet + 1px) { @content ; }
+  }
+  @if $point == mobile_only {
+    @media (min-width: 0px) and (max-width: $bp-mobile) { @content ; }
+  }
+
+}
