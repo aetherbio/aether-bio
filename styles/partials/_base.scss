@@ -29,7 +29,7 @@ a {
   color: $color-space;
 }
 
-blockquote {
+blockquote, h1,h2,h3,h4,h5,h6 {
   margin: 0;
 }
 
@@ -55,7 +55,11 @@ blockquote {
   align-items: center;
   padding-left: $pad-section;
   padding-right: 20px;
-
+  position: relative;
+  z-index: $index-nav;
+  @include breakpoint(mobile){
+    padding-left: 34px;
+  }
 }
 
 .site-nav {
@@ -78,11 +82,80 @@ blockquote {
       color: $color-cobalt;
     }
   }
+  @include breakpoint(mobile){
+    &.active {
+      .site-nav-list {
+        display: block;
+      }
+      .site-nav-toggle {
+        span {
+          &:nth-child(1), &:nth-child(4) {
+            top: 9px;
+            width: 0%;
+            left: 50%;
+          }
+          
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+          
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    &-list {
+      flex-direction: column;
+      position: absolute;
+      right: 0px;
+      width: 100%;
+      top: 75px;
+      display: none;
+      background-color: $color-space;
+      padding: 20px;
+      text-align: right;
+    }
+    &-item {
+      margin-left: 0;
+    }
+    &-toggle {
+      width: 34px;
+      height: 19px;
+      transition: .5s ease-in-out;
+      position: relative;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $color-white;
+        opacity: 1;
+        left: 0;
+        transition: .25s ease-in-out;
+        &:nth-child(1) {
+          top: 0px;
+        }
+        
+        &:nth-child(2),&:nth-child(3) {
+          top: 9px;
+        }
+        
+        &:nth-child(4) {
+          top: 18px;
+        }
+      }
+    }
+  }
 }
 
 .site-logo {
   width: 22vw;
   height: auto;
+  @include breakpoint(mobile){
+    width: 162px;
+  }
 }
 
 //PAGE INTROS
@@ -106,7 +179,7 @@ blockquote {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 587px;
+    width: 66vw;
     transform: translateY(54px);
     z-index: -1;
     border-left: 7px solid $color-white;
@@ -134,17 +207,23 @@ blockquote {
       width: 100vw;
       padding-left: 0;
       height: 300px;
+      align-items: flex-start;
     }
     &-image {
-      height: 100%;
+      height: 80%;
       width: 100%;
       object-fit: cover;
       border: none;
       transform: translateY(0);
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
     &-content {
       width: $section-width;
       margin: 0 auto;
+      text-align: center;
+      margin-top: 20px;
     }
     &-title {
       max-width: none;
@@ -164,6 +243,9 @@ blockquote {
         box-sizing: content-box;
         padding: 0 5px;
       }
+    }
+    &-button-link {
+      margin-top: 80px;
     }
   }
 }
@@ -189,7 +271,7 @@ blockquote {
 //Interface
 
 .button-link {
-  background-color: white;
+  background-color: $color-white;
   border: 3px solid $color-orange;
   text-transform: uppercase;
   font-weight: $fw-bold;
@@ -201,6 +283,12 @@ blockquote {
   transition: all 300ms ease-in-out;
   &:hover {
     background-color: $color-orange;
+  }
+  @include breakpoint(mobile){
+    font-size: 12px;
+    height: 32px;
+    min-width: 140px;
+    background-color: rgba($color-white,.85);
   }
 }
 

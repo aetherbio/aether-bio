@@ -4,10 +4,21 @@
   &-section {
     padding: 190px 0;
   }
+  @include breakpoint(mobile){
+    font-size: 15px;
+    &-section {
+      padding: $pad-v-mobile 0;
+    }
+  }
 }
 
 .home-video {
   &-section {
     padding: 145px 0;
+  }
+  @include breakpoint(mobile){
+    &-section {
+      padding: $pad-v-mobile 0;
+    }
   }
 }
