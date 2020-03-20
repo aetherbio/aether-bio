@@ -112,12 +112,16 @@ blockquote, h1,h2,h3,h4,h5,h6 {
       width: 100%;
       top: 75px;
       display: none;
-      background-color: $color-space;
-      padding: 20px;
+      background-color: $color-white;
+      padding: 35px 30px;
       text-align: right;
     }
     &-item {
       margin-left: 0;
+    }
+    &-link {
+      color: $color-space;
+      font-size: 14px;
     }
     &-toggle {
       width: 34px;
@@ -223,7 +227,7 @@ blockquote, h1,h2,h3,h4,h5,h6 {
       width: $section-width;
       margin: 0 auto;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 40px;
     }
     &-title {
       max-width: none;

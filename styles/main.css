@@ -102,12 +102,16 @@ blockquote, h1, h2, h3, h4, h5, h6 {
     width: 100%;
     top: 75px;
     display: none;
-    background-color: #0F2933;
-    padding: 20px;
+    background-color: #fff;
+    padding: 35px 30px;
     text-align: right;
   }
   .site-nav-item {
     margin-left: 0;
+  }
+  .site-nav-link {
+    color: #0F2933;
+    font-size: 14px;
   }
   .site-nav-toggle {
     width: 34px;
@@ -208,7 +212,7 @@ blockquote, h1, h2, h3, h4, h5, h6 {
     width: 75vw;
     margin: 0 auto;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .page-intro-title {
     max-width: none;
