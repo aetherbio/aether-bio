@@ -288,6 +288,23 @@ blockquote, h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
+.footer {
+  background-color: #0F2933;
+  color: #fff;
+  padding: 75px;
+}
+.footer-logo {
+  width: 140px;
+}
+.footer-address {
+  font-style: normal;
+  margin-top: 20px;
+  font-weight: 300;
+}
+.footer-address-line {
+  display: block;
+}
+
 .home-quote {
   font-size: 30px;
 }
