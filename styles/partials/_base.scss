@@ -17,6 +17,7 @@ body {
 ul {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 img {
@@ -29,13 +30,20 @@ a {
   color: $color-space;
 }
 
-blockquote, h1,h2,h3,h4,h5,h6 {
+blockquote {
   margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  @include font-raj();
+}
+
 .site-container {
-  max-width: 1440px;
+  max-width: $site-max-width;
+  min-width: $site-min-width;
   margin: 0 auto;
+  background-color: $color-space;
 }
 
 .mobile-only {
@@ -75,11 +83,15 @@ blockquote, h1,h2,h3,h4,h5,h6 {
   &-link {
     color: $color-white;
     text-transform: uppercase;
-    transition: color 500ms linear;
+    transition: color 300ms linear;
     font-weight: $fw-semibold;
     font-size: 12px;
     &:hover {
-      color: $color-cobalt;
+      color: $color-orange;
+    }
+    &.active {
+      color: $color-orange;
+      text-decoration: underline;
     }
   }
   @include breakpoint(mobile){
@@ -166,6 +178,7 @@ blockquote, h1,h2,h3,h4,h5,h6 {
 
 .page-intro {
   &-section {
+    background-color: $color-white;
     padding-left: $pad-section;
     height: 485px;
     display: flex;
@@ -184,10 +197,14 @@ blockquote, h1,h2,h3,h4,h5,h6 {
     bottom: 0;
     right: 0;
     width: 66vw;
+    max-width: $bp-tablet;
     transform: translateY(54px);
     z-index: -1;
     border-left: 7px solid $color-white;
     border-bottom: 7px solid $color-white;
+  }
+  &-button-link {
+    margin-top: 70px;
   }
   &-line {
     display: block;
@@ -208,7 +225,7 @@ blockquote, h1,h2,h3,h4,h5,h6 {
   }
   @include breakpoint(mobile){
     &-section {
-      width: 100vw;
+      width: 100%;
       padding-left: 0;
       height: 300px;
       align-items: flex-start;
@@ -221,7 +238,7 @@ blockquote, h1,h2,h3,h4,h5,h6 {
       transform: translateY(0);
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 5px;
     }
     &-content {
       width: $section-width;
@@ -265,11 +282,14 @@ blockquote, h1,h2,h3,h4,h5,h6 {
     color: $color-space;
     background-color: $color-white;
   }
-}
-
-.content-section-inner {
-  width: $section-width;
-  margin: 0 auto;
+  &-inner {
+    width: $section-width;
+    margin: 0 auto;
+  }
+  &-title {
+    font-size: 36px;
+    text-align: center;
+  }
 }
 
 //Interface
@@ -327,5 +347,12 @@ blockquote, h1,h2,h3,h4,h5,h6 {
   }
   &-address-line {
     display: block;
+  }
+  &-link {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
