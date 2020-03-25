@@ -138,16 +138,23 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 60px;
   max-width: 60vw; }
 
-.page-intro-image {
+.page-intro-image-container {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 66vw;
-  max-width: 1023px;
+  height: 40vw;
   transform: translateY(54px);
   z-index: -1;
   border-left: 7px solid #fff;
-  border-bottom: 7px solid #fff; }
+  border-bottom: 7px solid #fff;
+  max-width: 900px; }
+
+.page-intro-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; }
 
 .page-intro-button-link {
   margin-top: 70px; }
@@ -174,15 +181,18 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0;
     height: 300px;
     align-items: flex-start; }
-  .page-intro-image {
-    height: 80%;
+  .page-intro-image-container {
     width: 100%;
-    object-fit: cover;
+    height: 80%;
     border: none;
     transform: translateY(0);
     position: absolute;
     left: 0;
     bottom: 5px; }
+  .page-intro-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
   .page-intro-content {
     width: 70%;
     margin: 0 auto;
