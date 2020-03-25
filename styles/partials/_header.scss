@@ -1,0 +1,12 @@
+.site-header {
+  &-logo {
+    width: 22vw;
+    height: auto;
+    @include breakpoint(mobile){
+      width: 162px;
+    }
+  }
+  &-link {
+    display: flex;
+  }
+}

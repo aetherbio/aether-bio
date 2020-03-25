@@ -123,13 +123,6 @@ h1, h2, h3, h4, h5, h6 {
       .site-nav-toggle span:nth-child(4) {
         top: 18px; } }
 
-.site-logo {
-  width: 22vw;
-  height: auto; }
-  @media (max-width: 767px) {
-    .site-logo {
-      width: 162px; } }
-
 .page-intro-section {
   background-color: #fff;
   padding-left: 75px;
@@ -277,6 +270,16 @@ h1, h2, h3, h4, h5, h6 {
     .footer-link:hover {
       text-decoration: none; }
 
+.site-header-logo {
+  width: 22vw;
+  height: auto; }
+  @media (max-width: 767px) {
+    .site-header-logo {
+      width: 162px; } }
+
+.site-header-link {
+  display: flex; }
+
 .home-quote {
   font-size: 30px; }
   .home-quote-section {
@@ -325,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-value-description {
   font-size: 14px;
-  max-width: 155px;
+  max-width: 165px;
   margin: 0 auto; }
 
 @media (max-width: 767px) {
