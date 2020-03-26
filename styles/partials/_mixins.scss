@@ -7,6 +7,13 @@
   font-weight: 700;
 }
 
+@mixin full-bleed(){
+  position: relative;
+  width: 100vw !important;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @mixin breakpoint($point) {
   @if $point == desktop {
     @media (max-width: $bp-desktop) { @content ; }

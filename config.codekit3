@@ -62,7 +62,7 @@
 		"oAP": "/assets/images/home-image.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/assets/images/icon-dare.svg": {
@@ -111,7 +111,7 @@
 		"oA": 0,
 		"oAP": "/assets/images/intro-image-placeholder.gif",
 		"oF": 0,
-		"opt": 0
+		"opt": 1
 		},
 	"/assets/images/logo-orange-white.png": {
 		"ft": 32768,
@@ -119,8 +119,8 @@
 		"oA": 0,
 		"oAP": "/assets/images/logo-orange-white.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -361,7 +361,8 @@
 	"displayValue": "aether",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-pink",
-	"iconImageWasSetByUser": 0
+	"iconImageWasSetByUser": 0,
+	"lastBuiltDate": 606931818.69908798
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
