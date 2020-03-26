@@ -105,6 +105,14 @@
 		"plM": 52780316221407,
 		"prP": 0
 		},
+	"/assets/images/intro-image-placeholder.gif": {
+		"ft": 4194304,
+		"iS": 1911,
+		"oA": 0,
+		"oAP": "/assets/images/intro-image-placeholder.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"/assets/images/logo-orange-white.png": {
 		"ft": 32768,
 		"iS": 4334,
@@ -163,6 +171,17 @@
 		"oA": 0,
 		"oAP": "/index.html",
 		"oF": 0
+		},
+	"/scripts/lib/contentful.browser.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/scripts/lib/contentful.browser.min-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
 		},
 	"/scripts/lib/contentful.browser.min.js": {
 		"bF": 0,

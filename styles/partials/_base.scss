@@ -188,12 +188,13 @@ h1,h2,h3,h4,h5,h6 {
     bottom: 0;
     right: 0;
     width: 66vw;
-    height: 40vw;
+    height: 41vw;
     transform: translateY(54px);
     z-index: -1;
     border-left: 7px solid $color-white;
     border-bottom: 7px solid $color-white;
     max-width: 900px;
+    
   }
   &-image {
     width: 100%;
