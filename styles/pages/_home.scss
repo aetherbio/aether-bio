@@ -1,25 +1,34 @@
 .home-quote {
   font-size: 30px;
   &-section {
-    padding: 190px 0;
+    background-color: white;
+    color: $color-gray;
+  }
+  @include breakpoint(tablet){
+    font-size: 24px;
   }
   @include breakpoint(mobile){
     font-size: 15px;
-    &-section {
-      padding: $pad-v-mobile 0;
-    }
   }
 }
 
+.home-intro-section {
+  background-color: black;
+  color: white;
+}
 
 
 .home-video {
-  &-section {
-    padding: 145px 0;
+  &-container {
+    margin-top: 35px;
   }
-  @include breakpoint(mobile){
-    &-section {
-      padding: $pad-v-mobile 0;
-    }
+  &-text-container {
+    margin-top: 50px;
+  }
+}
+
+.home-people {
+  &-image-container {
+    margin-top: 35px;
   }
 }

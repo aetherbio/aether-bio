@@ -56,21 +56,31 @@ h1,h2,h3,h4,h5,h6 {
 //HEADER
 
 .site-header {
-  background-color: $color-space;
+  //background-color: $color-space;
   height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: $pad-section;
   padding-right: 20px;
-  position: relative;
   z-index: $index-nav;
+  //position: relative;
+
+  //MH - temp home styles
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   @include breakpoint(mobile){
     padding-left: 34px;
   }
 }
 
 .site-nav {
+  &.inactive {
+    display: none;
+  }
   &-list {
     display: flex;
   }
@@ -170,29 +180,40 @@ h1,h2,h3,h4,h5,h6 {
 .page-intro {
   &-section {
     background-color: $color-white;
-    padding-left: $pad-section;
-    height: 485px;
+    //padding-left: $pad-section;
+    height: 575px;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 10;
+    width: 100%;
+    @include breakpoint(tablet){
+      height: 385px;
+    }
+  }
+
+  &-content {
+    width: 100%;
   }
 
   &-title {
     @include font-raj();
     font-size: 60px;
-    max-width: 60vw;
+    //max-width: 60vw;
+    @include breakpoint(tablet){
+      text-align: center;
+    }
   }
   &-image-container {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 66vw;
-    height: 41vw;
-    transform: translateY(54px);
+    width: 50vw;
+    height: 100%;
+    //transform: translateY(54px);
     z-index: -1;
-    border-left: 7px solid $color-white;
-    border-bottom: 7px solid $color-white;
+    //border-left: 7px solid $color-white;
+    //border-bottom: 7px solid $color-white;
     max-width: 900px;
     
   }
@@ -209,7 +230,7 @@ h1,h2,h3,h4,h5,h6 {
     display: block;
     position: relative;
     white-space: nowrap;
-    &:after {
+    /*&:after {
       content: '';
       display: block;
       position: absolute;
@@ -220,34 +241,35 @@ h1,h2,h3,h4,h5,h6 {
       z-index: -1;
       box-sizing: content-box;
       padding: 0 10px;
-    }
+    }*/
   }
-  @include breakpoint(mobile){
-    &-section {
-      width: 100%;
-      padding-left: 0;
-      height: 300px;
-      align-items: flex-start;
-    }
+  @include breakpoint(tablet){
     &-image-container {
       width: 100%;
-      height: 80%;
+      //height: 80%;
       border: none;
-      transform: translateY(0);
       position: absolute;
       left: 0;
-      bottom: 5px;
+      top: 0;
     }
     &-image {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
+  }
+  @include breakpoint(mobile){
+    &-section {
+      width: 100%;
+      padding-left: 0;
+      height: 250px;
+      align-items: flex-start;
+    }
+    
     &-content {
-      width: $section-width;
       margin: 0 auto;
       text-align: center;
-      margin-top: 40px;
+      margin-top: 80px;
     }
     &-title {
       max-width: none;
@@ -255,6 +277,7 @@ h1,h2,h3,h4,h5,h6 {
       font-size: 30px;
     }
     &-line {
+      /*
       &:after {
         content: '';
         display: block;
@@ -266,7 +289,7 @@ h1,h2,h3,h4,h5,h6 {
         z-index: -1;
         box-sizing: content-box;
         padding: 0 5px;
-      }
+      }*/
     }
     &-button-link {
       margin-top: 80px;
@@ -277,10 +300,18 @@ h1,h2,h3,h4,h5,h6 {
 //PAGE CONTENT SECTIONS
 
 .content-section {
-  background-color: $color-space;
+  background-color: $color-section-bg;
   color: $color-white;
   display: flex;
   justify-content: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  @include breakpoint(mobile){
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+
   &.white {
     color: $color-space;
     background-color: $color-white;
@@ -292,6 +323,45 @@ h1,h2,h3,h4,h5,h6 {
   &-title {
     font-size: 36px;
     text-align: center;
+    color: $color-orange;
+    @include breakpoint(mobile){
+      font-size: 30px;
+    }
+  }
+  &-text-container {
+    font-size: 24px;
+    @include breakpoint(mobile){
+      font-size: 15px;
+    }
+  }
+  &-title-text {
+    display: flex;
+    align-items: center;
+
+    .content-section-title {
+      //flex-basis: 40%;
+      padding-right: 25px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      text-align: left;
+      &.blue {
+        color: $color-space;
+      }
+    }
+    .content-section-text {
+      padding-left: 25px;
+      border-left: 2px solid $color-orange;
+    }
+
+    @include breakpoint(mobile){
+      flex-direction: column;
+      .content-section-text {
+        padding-left: 0;
+        border-left: 0;
+        margin-top: 20px;
+        font-size: 15px;
+      }
+    }
   }
 }
 
@@ -337,9 +407,21 @@ h1,h2,h3,h4,h5,h6 {
 //FOOTER
 
 .footer {
-  background-color: $color-space;
+  background-color: $color-section-bg;
   color: $color-white;
-  padding: $pad-section;
+  padding: 35px;
+  font-weight: $fw-light;
+  font-size: 12px;
+  &-inner {
+    border-top: 1px solid $color-white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    @include breakpoint(mobile){
+      flex-direction: column;
+    }
+  }
   &-logo {
     width: 140px;
   }
@@ -350,6 +432,9 @@ h1,h2,h3,h4,h5,h6 {
   }
   &-address-line {
     display: block;
+    &.copyright {
+      margin-top: 20px;
+    }
   }
   &-link {
     color: white;

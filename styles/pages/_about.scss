@@ -1,12 +1,7 @@
 .about {
-  &-values-section {
-    padding-top: 140px;
-    padding-bottom: 40px;
-  }
+
   &-values-container {
     margin-top: 60px;
-    padding-bottom: 90px;
-    border-bottom: 1px solid $color-white;
   }
   &-values-list {
     display: flex;
@@ -18,14 +13,18 @@
     text-align: center;
   }
   &-value-image {
-    height: 134px;
+    height: 113px;
     width: auto;
   }
   &-value-content {
     margin-top: 20px;
   }
+  &-values-title {
+    color: $color-white;
+  }
   &-value-title {
-    color: $color-saffron;
+    color: $color-orange;
+    white-space: nowrap;
     font-size: 21px;
   }
   &-value-description {
@@ -37,6 +36,7 @@
   @include breakpoint(mobile){
     &-values-section {
       padding-top: 45px;
+      padding-bottom: 0px;
     }
     &-values-container {
       margin-top: 0;

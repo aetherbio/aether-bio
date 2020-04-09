@@ -21,37 +21,38 @@ const mainModule = (function(document) {
       accessToken: 'wDINDuN3Vtyxq0orSCGfl7m3jFaJopZs3jCE5KNBPfk'
     });
     page = document.querySelector('body').id;
-    switch(page){
-      case 'home':
-        getHomePageData();
-        break;
-      case 'about':
-        getAboutPageData();
-        getValuesData();
-    }
+    getHomePageData();
+    getAboutPageData();
+    getValuesData();
     getBusinessData();
   }
 
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      console.log(entry.fields);
-      const {introTitleLine1, introTitleLine2, introImage, introButtonText, bodyCopy,vimeoVideoId} = entry.fields;
+      const {introTitleLine1, introTitleLine2, introImage, introButtonText, bodyCopy,vimeoVideoId, videoText, videoTitle} = entry.fields;
       addStandardIntroData({introTitleLine1, introTitleLine2, introImage, introButtonText});
-      
-
       addContent(bodyCopy,'.home-quote');
       addVideo(vimeoVideoId,'.video-iframe');
-
+      addContent(videoText,'.home-video-text-container');
+      addContent(videoTitle,'.home-video-title');
     });
   }
 
   getAboutPageData = function(){
     client.getEntry(ENTRIES.about)
     .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, introButtonText, valuesTitle} = entry.fields;
-      addStandardIntroData({introTitleLine1, introTitleLine2, introImage, introButtonText});
-      addContent(valuesTitle,'.content-section-title');
+      const {introTitleLine1, introTitleLine2, introImage, introButtonText, valuesTitle, peopleDescription} = entry.fields;
+      //addStandardIntroData({introTitleLine1, introTitleLine2, introButtonText});
+    
+      addContent(introTitleLine1,'.people-section-line1');
+      addContent(introTitleLine1,'.people-section-line1');
+      addContent(introTitleLine2,'.people-section-line2');
+      addContent(peopleDescription,'.home-people-text');
+      addContent(peopleDescription,'.home-people-text');
+      addImage(introImage,'.home-people-image');
+      addContent(valuesTitle,'.about-values-title');
+
     });
   }
 
@@ -106,7 +107,7 @@ const mainModule = (function(document) {
 
     addContent(introTitleLine1,'.page-intro-line-one');
     addContent(introTitleLine2,'.page-intro-line-two');
-    addContent(introButtonText,'.page-intro-button-link');
+    //addContent(introButtonText,'.page-intro-button-link');
     addImage(introImage,'.page-intro-image');
   }
 
