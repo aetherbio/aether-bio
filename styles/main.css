@@ -34,7 +34,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  background-color: #0F2933; }
+  background-color: #0F2933;
+  position: relative; }
 
 .mobile-only {
   display: none; }

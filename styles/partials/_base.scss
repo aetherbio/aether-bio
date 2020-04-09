@@ -44,6 +44,7 @@ h1,h2,h3,h4,h5,h6 {
   min-width: $site-min-width;
   margin: 0 auto;
   background-color: $color-space;
+  position: relative;
 }
 
 .mobile-only {
