@@ -30,8 +30,10 @@ const mainModule = (function(document) {
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, introButtonText, bodyCopy,vimeoVideoId, videoText, videoTitle} = entry.fields;
-      addStandardIntroData({introTitleLine1, introTitleLine2, introImage, introButtonText});
+      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle} = entry.fields;
+      addContent(introTitleLine1,'.page-intro-line-one');
+      addContent(introTitleLine2,'.page-intro-line-two');
+      addImage(introImage,'.page-intro-image');
       addContent(bodyCopy,'.home-quote');
       addVideo(vimeoVideoId,'.video-iframe');
       addContent(videoText,'.home-video-text-container');
@@ -51,7 +53,7 @@ const mainModule = (function(document) {
       addContent(peopleDescription,'.home-people-text');
       addContent(peopleDescription,'.home-people-text');
       addImage(introImage,'.home-people-image');
-      addContent(valuesTitle,'.about-values-title');
+      addContent(valuesTitle,'.home-values-title');
 
     });
   }
@@ -75,21 +77,21 @@ const mainModule = (function(document) {
         valuesMarkup += valueObj.valueMarkup;
       });
 
-      document.querySelector('.about-values-list').innerHTML = valuesMarkup;
+      document.querySelector('.home-values-list').innerHTML = valuesMarkup;
       
     });
   }
 
   addValueItem = function(fields,){
     const { valueTitle, valueDescription, valueIcon, order } = fields;
-
+    
     if (valueTitle && valueDescription && valueIcon){
       const valueTemplate = 
-      `<li class="about-value-item" data-id="${valueTitle}">
-        <img src="${valueIcon.fields.file.url}" alt="${valueIcon.fields.file.title}" class="about-value-image">
-        <div class="about-value-content">
-          <h4 class="about-value-title">${valueTitle}</h4>
-          <p class="about-value-description">${valueDescription}</p>
+      `<li class="value-item" data-id="${valueTitle}">
+        <img src="${valueIcon.fields.file.url}" alt="${valueTitle}" class="value-image">
+        <div class="value-content">
+          <h4 class="value-title">${valueTitle}</h4>
+          <p class="value-description">${valueDescription}</p>
         </div>
       </li>`;
       const valuesObj = {
@@ -102,14 +104,6 @@ const mainModule = (function(document) {
     }
   }
 
-  addStandardIntroData = function(fields){
-    const {introTitleLine1, introTitleLine2, introImage, introButtonText} = fields;
-
-    addContent(introTitleLine1,'.page-intro-line-one');
-    addContent(introTitleLine2,'.page-intro-line-two');
-    //addContent(introButtonText,'.page-intro-button-link');
-    addImage(introImage,'.page-intro-image');
-  }
 
   getBusinessData = function(){
     client.getEntry(ENTRIES.business)

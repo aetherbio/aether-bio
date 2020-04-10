@@ -1,0 +1,65 @@
+//Content Sections
+
+.content-section {
+  background-color: $color-section-bg;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  @include breakpoint(mobile) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  &.white {
+    color: $color-space;
+    background-color: $color-white;
+  }
+  &-inner {
+    width: $section-width;
+    margin: 0 auto;
+  }
+  &-title {
+    font-size: 36px;
+    text-align: center;
+    color: $color-orange;
+    @include breakpoint(mobile) {
+      font-size: 30px;
+    }
+  }
+  &-text-container {
+    font-size: 24px;
+    @include breakpoint(mobile) {
+      font-size: 15px;
+    }
+  }
+  &-title-text {
+    display: flex;
+    align-items: center;
+
+    .content-section-title {
+      padding-right: 25px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      text-align: left;
+      &.blue {
+        color: $color-space;
+      }
+    }
+    .content-section-text {
+      padding-left: 25px;
+      border-left: 2px solid $color-orange;
+    }
+
+    @include breakpoint(mobile) {
+      flex-direction: column;
+      .content-section-text {
+        padding-left: 0;
+        border-left: 0;
+        margin-top: 20px;
+        font-size: 15px;
+      }
+    }
+  }
+}

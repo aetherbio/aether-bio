@@ -1,34 +1,45 @@
-.home-quote {
-  font-size: 30px;
-  &-section {
-    background-color: white;
-    color: $color-gray;
+.home {
+  &-values-container {
+    margin-top: 60px;
   }
-  @include breakpoint(tablet){
-    font-size: 24px;
+  &-quote {
+    font-size: 30px;
+    @include breakpoint(tablet) {
+      font-size: 24px;
+    }
+    @include breakpoint(mobile) {
+      font-size: 15px;
+    }
+    &-section {
+      padding-top: 135px;
+      padding-bottom: 135px;
+    }
   }
-  @include breakpoint(mobile){
-    font-size: 15px;
+  &-intro-section {
+    background-color: black;
+    color: white;
   }
-}
-
-.home-intro-section {
-  background-color: black;
-  color: white;
-}
-
-
-.home-video {
-  &-container {
+  &-video-container {
     margin-top: 35px;
   }
-  &-text-container {
+  &-video-text-container {
     margin-top: 50px;
   }
-}
-
-.home-people {
-  &-image-container {
+  &-people-image-container {
     margin-top: 35px;
   }
+  &-values-section {
+    @include breakpoint(mobile) {
+      padding-top: 45px;
+      padding-bottom: 0px;
+    }
+  }
+  &-values-container {
+    margin-top: 60px;
+    @include breakpoint(mobile) {
+      margin-top: 0;
+      padding-bottom: 60px;
+    }
+  }
+  
 }

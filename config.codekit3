@@ -266,19 +266,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/styles/pages/_about.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/styles/pages/_about.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/styles/pages/_all.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -331,6 +318,32 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/styles/partials/_content-section.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_content-section.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/partials/_footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/styles/partials/_header.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -340,6 +353,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/styles/partials/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/partials/_interface.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_interface.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -357,6 +383,45 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/styles/partials/_nav.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_nav.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/partials/_page-intro.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_page-intro.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/partials/_values.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_values.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/styles/partials/_variables.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -366,6 +431,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/styles/partials/_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/partials/_videos.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/partials/_videos.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

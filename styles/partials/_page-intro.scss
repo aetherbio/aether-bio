@@ -1,0 +1,92 @@
+//Page Intros
+
+.page-intro {
+  &-section {
+    background-color: $color-white;
+    height: 575px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    @include breakpoint(tablet) {
+      height: 385px;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      padding-left: 0;
+      height: 250px;
+      align-items: flex-start;
+    }
+  }
+
+  &-title {
+    @include font-raj();
+    font-size: 60px;
+    //max-width: 60vw;
+    @include breakpoint(tablet) {
+      text-align: center;
+    }
+    @include breakpoint(mobile) {
+      max-width: none;
+      display: inline-block;
+      font-size: 30px;
+    }
+  }
+  &-image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    //NEW
+    width: 100%;
+    text-align: right;
+    height: 100%;
+    z-index: -1;
+    @include breakpoint(gt_desktop) {
+      width: 50%;
+      max-width: 900px;
+    }
+    @include breakpoint(tablet) {
+      width: 100%;
+      border: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  &-image {
+    width: auto;
+    height: 100%;
+
+    @include breakpoint(gt_desktop) {
+      width: 100%;
+      object-fit: cover;
+      object-position: 100% 50%;
+    }
+
+    @include breakpoint(tablet) {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &-button-link {
+    margin-top: 70px;
+    @include breakpoint(mobile) {
+      margin-top: 80px;
+    }
+  }
+  &-line {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+  }
+  &-content {
+    @include breakpoint(mobile) {
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 80px;
+    }
+  }
+}

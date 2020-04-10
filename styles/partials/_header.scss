@@ -1,6 +1,24 @@
+//Header
+
 .site-header {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: $pad-section;
+  padding-right: 20px;
+  z-index: $index-nav;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  @include breakpoint(mobile) {
+    padding-left: 34px;
+  }
+
   &-logo {
     width: 22vw;
+    max-width: 250px;
     height: auto;
     @include breakpoint(mobile){
       width: 162px;

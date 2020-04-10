@@ -1,0 +1,40 @@
+//Footer
+
+.footer {
+  background-color: $color-section-bg;
+  color: $color-white;
+  padding: 35px;
+  font-weight: $fw-light;
+  font-size: 12px;
+  &-inner {
+    border-top: 1px solid $color-white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }
+  }
+  &-logo {
+    width: 140px;
+  }
+  &-address {
+    font-style: normal;
+    margin-top: 20px;
+    font-weight: $fw-light;
+  }
+  &-address-line {
+    display: block;
+    &.copyright {
+      margin-top: 20px;
+    }
+  }
+  &-link {
+    color: white;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
