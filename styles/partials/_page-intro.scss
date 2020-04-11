@@ -29,7 +29,6 @@
     }
     @include breakpoint(mobile) {
       max-width: none;
-      display: inline-block;
       font-size: 30px;
     }
   }

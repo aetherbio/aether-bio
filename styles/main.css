@@ -286,7 +286,6 @@ h6 {
   @media (max-width: 767px) {
     .page-intro-title {
       max-width: none;
-      display: inline-block;
       font-size: 30px; } }
 .page-intro-image-container {
   position: absolute;
@@ -385,7 +384,10 @@ h6 {
 .home-intro-section {
   background-color: black;
   color: white; }
-
+  @media (max-width: 767px) {
+    .home-intro-section {
+      display: flex;
+      align-items: center; } }
 .home-video-container {
   margin-top: 35px; }
 

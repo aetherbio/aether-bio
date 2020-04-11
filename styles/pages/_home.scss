@@ -18,6 +18,10 @@
   &-intro-section {
     background-color: black;
     color: white;
+    @include breakpoint(mobile){
+      display: flex;
+      align-items: center;
+    }
   }
   &-video-container {
     margin-top: 35px;
