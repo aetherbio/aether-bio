@@ -35,6 +35,9 @@ h6 {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700; }
 
+button {
+  font-family: 'Overpass', sans-serif; }
+
 .section-inner {
   max-width: 1440px;
   min-width: 320px;
@@ -149,10 +152,11 @@ h6 {
         top: 18px; } }
 
 .button-link {
-  background-color: #fff;
+  background-color: transparent;
+  color: #FC593A;
   border: 3px solid #FC593A;
-  text-transform: uppercase;
   font-weight: 800;
+  font-size: 18px;
   display: inline-flex;
   height: 54px;
   align-items: center;
@@ -160,13 +164,15 @@ h6 {
   min-width: 200px;
   transition: all 300ms ease-in-out; }
   .button-link:hover {
-    background-color: #FC593A; }
+    background-color: #FC593A;
+    color: #fff; }
   @media (max-width: 767px) {
     .button-link {
       font-size: 12px;
       height: 32px;
       min-width: 140px;
-      background-color: rgba(255, 255, 255, 0.85); } }
+      background-color: #FC593A;
+      color: #fff; } }
 .content-section {
   background-color: #242A2D;
   color: #fff;
@@ -184,6 +190,9 @@ h6 {
   .content-section-inner {
     width: 70%;
     margin: 0 auto; }
+    @media (max-width: 767px) {
+      .content-section-inner {
+        width: 85%; } }
   .content-section-title {
     font-size: 36px;
     text-align: center;
@@ -377,27 +386,43 @@ h6 {
       font-size: 24px; } }
   @media (max-width: 767px) {
     .home-quote {
-      font-size: 15px; } }
+      font-size: 20px; } }
   .home-quote-section {
     padding-top: 135px;
     padding-bottom: 135px; }
-
+    @media (max-width: 767px) {
+      .home-quote-section {
+        padding-top: 95px;
+        padding-bottom: 95px; } }
 .home-intro-section {
   background-color: black;
   color: white; }
   @media (max-width: 767px) {
     .home-intro-section {
       display: flex;
-      align-items: center; } }
+      align-items: center; }
+      .home-intro-section .content-section-inner {
+        text-align: center; } }
+.home-button-link {
+  margin-top: 30px; }
+  @media (max-width: 767px) {
+    .home-button-link {
+      margin-top: 15px; } }
 .home-video-container {
   margin-top: 35px; }
 
 .home-video-text-container {
   margin-top: 50px; }
 
+.home-people-section .content-section-title-text {
+  align-items: flex-start; }
+
 .home-people-image-container {
   margin-top: 35px; }
-
+  @media (max-width: 767px) {
+    .home-people-image-container {
+      margin-left: -15%;
+      margin-right: -15%; } }
 @media (max-width: 767px) {
   .home-values-section {
     padding-top: 45px;

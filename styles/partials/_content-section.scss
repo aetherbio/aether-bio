@@ -19,6 +19,9 @@
   &-inner {
     width: $section-width;
     margin: 0 auto;
+    @include breakpoint(mobile){
+      width: $section-width-mobile;
+    }
   }
   &-title {
     font-size: 36px;

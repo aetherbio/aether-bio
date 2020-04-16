@@ -135,12 +135,12 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/build/.gitignore": {
+	"/favicon.ico": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/build/.gitignore",
+		"oAP": "/favicon.ico",
 		"oF": 0
 		},
 	"/includes/footer.html": {

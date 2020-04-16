@@ -46,6 +46,10 @@ h6 {
   @include font-raj();
 }
 
+button {
+  @include font-overpass();
+}
+
 .section-inner {
   max-width: $site-max-width;
   min-width: $site-min-width;

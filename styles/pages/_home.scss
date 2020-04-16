@@ -8,11 +8,15 @@
       font-size: 24px;
     }
     @include breakpoint(mobile) {
-      font-size: 15px;
+      font-size: 20px;
     }
     &-section {
       padding-top: 135px;
       padding-bottom: 135px;
+      @include breakpoint(mobile){
+        padding-top: $pad-v-mobile;
+        padding-bottom: $pad-v-mobile;
+      }
     }
   }
   &-intro-section {
@@ -21,6 +25,15 @@
     @include breakpoint(mobile){
       display: flex;
       align-items: center;
+      .content-section-inner {
+        text-align: center;
+      }
+    }
+  }
+  &-button-link {
+    margin-top: 30px;
+    @include breakpoint(mobile){
+      margin-top: 15px;
     }
   }
   &-video-container {
@@ -29,8 +42,17 @@
   &-video-text-container {
     margin-top: 50px;
   }
+  &-people-section {
+    .content-section-title-text {
+      align-items: flex-start;
+    }
+  }
   &-people-image-container {
     margin-top: 35px;
+    @include breakpoint(mobile){
+      margin-left: -15%;
+      margin-right: -15%;
+    }
   }
   &-values-section {
     @include breakpoint(mobile) {

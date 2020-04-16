@@ -4,7 +4,6 @@ let page;
 const BASE_IMAGE_URL = 'https://images.ctfassets.net/';
 const ENTRIES = {
   'home': '3HNo4cZbc7eKortwfaOzOf',
-  'about': '6qePITHJIMvrh5C8zxusXU',
   'business': '2d29rmKQNdknaC0MW7sDtf'
 }
 
@@ -22,7 +21,7 @@ const mainModule = (function(document) {
     });
     page = document.querySelector('body').id;
     getHomePageData();
-    getAboutPageData();
+    //getAboutPageData();
     getValuesData();
     getBusinessData();
   }
@@ -30,7 +29,7 @@ const mainModule = (function(document) {
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle} = entry.fields;
+      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle, peopleSectionTitleLine1, peopleSectionTitleLine2, peopleDescription, peopleImage, valuesTitle} = entry.fields;
       addContent(introTitleLine1,'.page-intro-line-one');
       addContent(introTitleLine2,'.page-intro-line-two');
       addImage(introImage,'.page-intro-image');
@@ -38,6 +37,11 @@ const mainModule = (function(document) {
       addVideo(vimeoVideoId,'.video-iframe');
       addContent(videoText,'.home-video-text-container');
       addContent(videoTitle,'.home-video-title');
+      addContent(peopleSectionTitleLine1,'.people-section-line1');
+      addContent(peopleSectionTitleLine2,'.people-section-line2');
+      addContent(peopleDescription,'.home-people-text');
+      addImage(peopleImage,'.home-people-image');
+      addContent(valuesTitle,'.home-values-title');
     });
   }
 
@@ -48,9 +52,7 @@ const mainModule = (function(document) {
       //addStandardIntroData({introTitleLine1, introTitleLine2, introButtonText});
     
       addContent(introTitleLine1,'.people-section-line1');
-      addContent(introTitleLine1,'.people-section-line1');
       addContent(introTitleLine2,'.people-section-line2');
-      addContent(peopleDescription,'.home-people-text');
       addContent(peopleDescription,'.home-people-text');
       addImage(introImage,'.home-people-image');
       addContent(valuesTitle,'.home-values-title');
