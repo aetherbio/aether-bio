@@ -171,8 +171,8 @@ button {
       font-size: 12px;
       height: 32px;
       min-width: 140px;
-      background-color: #FC593A;
-      color: #fff; } }
+      background-color: #fff;
+      color: #FC593A; } }
 .content-section {
   background-color: #242A2D;
   color: #fff;
@@ -217,7 +217,8 @@ button {
         color: #0F2933; }
     .content-section-title-text .content-section-text {
       padding-left: 25px;
-      border-left: 2px solid #FC593A; }
+      border-left: 2px solid #FC593A;
+      font-size: 24px; }
     @media (max-width: 767px) {
       .content-section-title-text {
         flex-direction: column; }
