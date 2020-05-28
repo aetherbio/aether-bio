@@ -287,6 +287,19 @@ button {
       padding-left: 0;
       height: 250px;
       align-items: flex-start; } }
+.page-intro-video + .section-inner {
+  pointer-events: none; }
+  .page-intro-video + .section-inner a, .page-intro-video + .section-inner button {
+    pointer-events: all; }
+
+.page-intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 .page-intro-title {
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;

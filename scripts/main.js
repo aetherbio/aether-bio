@@ -29,11 +29,12 @@ const mainModule = (function(document) {
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle, peopleSectionTitleLine1, peopleSectionTitleLine2, peopleDescription, peopleImage, valuesTitle} = entry.fields;
+      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle, peopleSectionTitleLine1, peopleSectionTitleLine2, peopleDescription, peopleImage, valuesTitle,introVideo,introVideoMp4} = entry.fields;
       addContent(introTitleLine1,'.page-intro-line-one');
       addContent(introTitleLine2,'.page-intro-line-two');
-      addImage(introImage,'.page-intro-image');
+      //addImage(introImage,'.page-intro-image');
       addContent(bodyCopy,'.home-quote');
+      addIntroVideo(introVideo,introVideoMp4,'.page-intro-video');
       addVideo(vimeoVideoId,'.video-iframe');
       addContent(videoText,'.home-video-text-container');
       addContent(videoTitle,'.home-video-title');
@@ -120,6 +121,9 @@ const mainModule = (function(document) {
 
   addSiteListeners = function(){
     document.querySelector('.site-nav-toggle').addEventListener('click',onSiteNavToggleClick);
+    document.querySelector('.page-intro-video').onclick = function (e){
+      e.currentTarget.play();
+    };
   }
 
   onSiteNavToggleClick = (e)=>{
@@ -168,11 +172,28 @@ const mainModule = (function(document) {
     }
   }
 
+  addIntroVideo = function(webm,mp4,$selector){
+    const $el = document.querySelector($selector);
+    if ($el){
+      let sources = '';
+      if (webm){
+        const webmSource = `<source src='${webm.fields.file.url}' type='video/webm'/>`;
+        sources += webmSource;
+      }
+
+      if (mp4){
+        const mp4Source = `<source src='${mp4.fields.file.url}' type='video/mp4'/>`;
+        sources += mp4Source;
+      }
+      $el.innerHTML = sources;
+    }
+  }
+
   addVideo = function(id,$selector){
     if (id){
       const $el = document.querySelector($selector);
       if ($el){
-        document.querySelector($selector).setAttribute("src",`https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`);
+        $el.setAttribute("src",`https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`);
       } else {
         console.error('video element does not exist',$selector);
       }
