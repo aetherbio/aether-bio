@@ -23,4 +23,10 @@
     background-color: $color-white;
     color: $color-orange;
   }
+  &.white {
+    background-color: $color-white;
+    &:hover {
+      background-color: $color-orange;
+    }
+  }
 }

@@ -173,6 +173,11 @@ button {
       min-width: 140px;
       background-color: #fff;
       color: #FC593A; } }
+  .button-link.white {
+    background-color: #fff; }
+    .button-link.white:hover {
+      background-color: #FC593A; }
+
 .content-section {
   background-color: #242A2D;
   color: #fff;

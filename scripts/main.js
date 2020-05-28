@@ -7,6 +7,8 @@ const ENTRIES = {
   'business': '2d29rmKQNdknaC0MW7sDtf'
 }
 
+let hasScrolled = false; //first time this is true, play intro vid
+
 const mainModule = (function(document) {
 
   init = function() {
@@ -121,9 +123,31 @@ const mainModule = (function(document) {
 
   addSiteListeners = function(){
     document.querySelector('.site-nav-toggle').addEventListener('click',onSiteNavToggleClick);
-    document.querySelector('.page-intro-video').onclick = function (e){
-      e.currentTarget.play();
+    document.querySelector('.page-intro-video').onclick = (e)=>{
+      playIntroVideo(e);
     };
+    window.addEventListener("scroll",onScroll);
+  }
+
+  onScroll = function(e){
+    if (hasScrolled){
+      window.removeEventListener("scroll",onScroll);
+      return;
+    }
+    const isVideoPlaying = checkIfVideoPlaying(document.querySelector('.page-intro-video'));
+    hasScrolled = true;
+    console.log(isVideoPlaying);
+    if (!isVideoPlaying){
+      playIntroVideo();
+    }
+  }
+
+  checkIfVideoPlaying = (video)=>{
+    return !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+  }
+
+  playIntroVideo = ()=>{
+    document.querySelector('.page-intro-video').play();
   }
 
   onSiteNavToggleClick = (e)=>{
