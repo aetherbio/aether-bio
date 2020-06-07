@@ -13,7 +13,6 @@ const mainModule = (function(document) {
 
   init = function() {
     configureContent();
-    addSiteListeners();
   }
 
   configureContent = function(){
@@ -22,9 +21,14 @@ const mainModule = (function(document) {
       accessToken: 'wDINDuN3Vtyxq0orSCGfl7m3jFaJopZs3jCE5KNBPfk'
     });
     page = document.querySelector('body').id;
-    getHomePageData();
-    //getAboutPageData();
-    getValuesData();
+    console.log(page);
+    if (page === 'home'){
+      getHomePageData();
+    } else if (page === 'about'){
+      //getAboutPageData();
+      getValuesData();
+    }
+    addSiteListeners();
     getBusinessData();
   }
 
@@ -36,15 +40,13 @@ const mainModule = (function(document) {
       addContent(bodyCopy,'.home-quote');
       addIntroVideo(introVideo,introVideoMp4,videoPoster,'.page-intro-video');
       addVideo(vimeoVideoId,'.video-iframe');
-      addContent(valuesTitle,'.home-values-title');
     });
   }
 
-  getAboutPageData = function(){
+  /*getAboutPageData = function(){
     client.getEntry(ENTRIES.about)
     .then(function (entry) {
       const {introTitleLine1, introTitleLine2, introImage, introButtonText, valuesTitle, peopleDescription} = entry.fields;
-      //addStandardIntroData({introTitleLine1, introTitleLine2, introButtonText});
     
       addContent(introTitleLine1,'.people-section-line1');
       addContent(introTitleLine2,'.people-section-line2');
@@ -53,7 +55,7 @@ const mainModule = (function(document) {
       addContent(valuesTitle,'.home-values-title');
 
     });
-  }
+  }*/
 
   getValuesData = function(){
     client.getEntries({
@@ -115,10 +117,13 @@ const mainModule = (function(document) {
 
   addSiteListeners = function(){
     document.querySelector('.site-nav-toggle').addEventListener('click',onSiteNavToggleClick);
-    document.querySelector('.page-intro-video').onclick = (e)=>{
-      playIntroVideo(e);
-    };
-    window.addEventListener("scroll",onScroll);
+    
+    if (page === 'home'){
+      document.querySelector('.page-intro-video').onclick = (e)=>{
+        playIntroVideo(e);
+      };
+      window.addEventListener("scroll",onScroll);
+    }
   }
 
   onScroll = function(e){

@@ -37,17 +37,6 @@
       }
     }
   }
-  &-intro-section {
-    background-color: black;
-    color: white;
-    @include breakpoint(mobile){
-      display: flex;
-      align-items: center;
-      .content-section-inner {
-        text-align: center;
-      }
-    }
-  }
   &-button-link {
     margin-top: 30px;
     @include breakpoint(mobile){
@@ -77,17 +66,24 @@
   &-technologies-container {
     display: flex;
     justify-content: space-between;
-    width: 72vw;
     margin-top: 35px;
     @include breakpoint(mobile){
       display: block;
-      width: 100%;
     }
     .technology {
       &-container {
-        width: 33vw;
+        width: 50%;
+        @include breakpoint(gt_mobile){
+          &:nth-child(odd) {
+            padding-right: 30px;
+          }
+          &:nth-child(even){
+            padding-left: 30px;
+          }
+        }
         @include breakpoint(mobile){
           width: 100%;
+          text-align: center;
         }
       }
       &-number {

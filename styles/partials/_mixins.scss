@@ -24,6 +24,9 @@
   @if $point == mobile {
     @media (max-width: $bp-mobile) { @content ; }
   }
+  @if $point == gt_mobile {
+    @media (min-width: $bp-mobile + 1px) { @content ; }
+  }
   @if $point == gt_tablet {
     @media (min-width: $bp-tablet + 1px) { @content ; }
   }
