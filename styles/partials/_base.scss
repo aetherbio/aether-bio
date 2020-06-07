@@ -50,6 +50,7 @@ button {
   @include font-overpass();
 }
 
+
 .section-inner {
   max-width: $site-max-width;
   min-width: $site-min-width;
@@ -68,3 +69,6 @@ button {
   }
 }
 
+.orange {
+  color: $color-orange;
+}

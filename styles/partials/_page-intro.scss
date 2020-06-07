@@ -37,12 +37,12 @@
   &-title {
     @include font-raj();
     font-size: 60px;
-    //max-width: 60vw;
+    width: 43vw;
     @include breakpoint(tablet) {
       text-align: center;
+      width: 100%;
     }
     @include breakpoint(mobile) {
-      max-width: none;
       font-size: 30px;
     }
   }
@@ -89,11 +89,6 @@
     @include breakpoint(mobile) {
       margin-top: 80px;
     }
-  }
-  &-line {
-    display: block;
-    position: relative;
-    white-space: nowrap;
   }
   &-content {
     @include breakpoint(mobile) {

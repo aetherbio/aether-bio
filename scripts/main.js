@@ -31,19 +31,11 @@ const mainModule = (function(document) {
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, bodyCopy,vimeoVideoId, videoText, videoTitle, peopleSectionTitleLine1, peopleSectionTitleLine2, peopleDescription, peopleImage, valuesTitle,introVideo,introVideoMp4} = entry.fields;
-      addContent(introTitleLine1,'.page-intro-line-one');
-      addContent(introTitleLine2,'.page-intro-line-two');
-      //addImage(introImage,'.page-intro-image');
+      const {introTitleLine1, bodyCopy, valuesTitle,introVideo,introVideoMp4, videoPoster, vimeoVideoId } = entry.fields;
+      addContent(introTitleLine1,'.page-intro-title');
       addContent(bodyCopy,'.home-quote');
-      addIntroVideo(introVideo,introVideoMp4,'.page-intro-video');
+      addIntroVideo(introVideo,introVideoMp4,videoPoster,'.page-intro-video');
       addVideo(vimeoVideoId,'.video-iframe');
-      addContent(videoText,'.home-video-text-container');
-      addContent(videoTitle,'.home-video-title');
-      addContent(peopleSectionTitleLine1,'.people-section-line1');
-      addContent(peopleSectionTitleLine2,'.people-section-line2');
-      addContent(peopleDescription,'.home-people-text');
-      addImage(peopleImage,'.home-people-image');
       addContent(valuesTitle,'.home-values-title');
     });
   }
@@ -153,6 +145,7 @@ const mainModule = (function(document) {
   onSiteNavToggleClick = (e)=>{
     const $mobileNav = e.currentTarget.parentElement;
     $mobileNav.classList.toggle('active');
+    document.body.classList.toggle('nav-active');
   }
 
   addContent = function(content,$selector){
@@ -196,7 +189,8 @@ const mainModule = (function(document) {
     }
   }
 
-  addIntroVideo = function(webm,mp4,$selector){
+  addIntroVideo = function(webm,mp4,videoPoster,$selector){
+    console.log(videoPoster);
     const $el = document.querySelector($selector);
     if ($el){
       let sources = '';
@@ -210,6 +204,7 @@ const mainModule = (function(document) {
         sources += mp4Source;
       }
       $el.innerHTML = sources;
+      $el.setAttribute("poster",videoPoster.fields.file.url);
     }
   }
 

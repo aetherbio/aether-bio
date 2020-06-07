@@ -42,7 +42,7 @@
                 class="site-header-logo" /></a>
           </h1>
       
-          <nav class="site-nav inactive">
+          <nav class="site-nav ">
             <button class="mobile-only site-nav-toggle">
               <span></span>
               <span></span>
@@ -68,14 +68,12 @@
           <video
             class="page-intro-video"
             muted
+            loop
           >
           </video>
           <div class="section-inner">
             <div class="content-section-inner">
-              <h2 class="page-intro-title">
-                <span class="page-intro-line page-intro-line-one"></span>
-                <span class="page-intro-line page-intro-line-two"></span>
-              </h2>
+              <h2 class="page-intro-title"></h2>
               <a
                 href="https://boards.greenhouse.io/aetherbiomachines"
                 target="_blank"
@@ -96,7 +94,6 @@
         <section class="content-section home-video-section">
           <div class="section-inner">
             <div class="content-section-inner">
-              <h3 class="content-section-title home-video-title"></h3>
               <div class="video-container home-video-container">
                 <iframe
                   class="video-iframe"
@@ -108,37 +105,50 @@
               </div>
               <div
                 class="content-section-text-container home-video-text-container"
-              ></div>
-            </div>
-          </div>
-        </section>
-        <section class="content-section white home-people-section">
-          <div class="section-inner">
-            <div class="content-section-inner">
-              <div class="content-section-title-text">
-                <h3 class="content-section-title blue">
-                  <span class="people-section-line1"></span><br />
-                  <span class="people-section-line2"></span>
+              >
+                <div class="video-text-bar"></div>
+                <h3 class="video-text-title">
+                  The Aether platform combines <span class="orange">two</span> unique technologies
                 </h3>
-                <div class="content-section-text home-people-text"></div>
-              </div>
-              <div class="image-container home-people-image-container">
-                <img
-                  src="assets/images/intro-image-placeholder.gif"
-                  alt="The Aether Team"
-                  class="home-people-image"
-                />
+                <div class="home-technologies-container">
+                  <div class="technology-container">
+                    <p class="technology-number">01</p>
+                    <p class="technology-description">Our proprietary robotic factor that runs orders of magnitude more experiments than previously possible.</p>
+                  </div>
+                  <div class="technology-container">
+                    <p class="technology-number">02</p>
+                    <p class="technology-description">State of the art deep learning algorithms map sequence space, enabling Aether to search through trillions of enzyme designs.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="content-section home-values-section">
-          <div class="section-inner">
-            <div class="content-section-inner">
-              <h3 class="content-section-title home-values-title"></h3>
-              <div class="home-values-container">
-                <ul class="home-values-list values-list"></ul>
+        <section class="home-details-section">
+          <div class="home-details-row">
+            <div class="home-details-img-container home-details-col">
+              <img src="assets/images/home-details-01.jpg" alt="biocatalysis" class="home-details-img">
+            </div>
+            <div class="home-details-content-container home-details-col">
+              <div class="home-details-inner">
+                <p class="home-details-p">By pushing the boundaries of biocatalysis, Aether delivers technology that integrates into existing production pipelines, dramatically reducing manufacturing cost, and minimizing time to market for novel products.</p>
               </div>
+            </div>
+          </div>
+          <div class="home-details-row row-2">
+            <div class="home-details-content-container home-details-col"">
+              <div class="home-details-inner vertical">
+                <div class="home-details-p-outer">
+                  <p class="home-details-p">Talk to us today about your chemical manufacturing needs.</p>
+                </div>
+                <div class="home-details-button-container">
+                  <a href="mailto:info@aetherbio.com" class="button-link">Contact Us</a>
+                </div>
+              </div>
+            </div>
+            <div class="home-details-img-container home-details-col"">
+              <img src="assets/images/home-details-02.jpg" alt="bioengineering lab image" class="home-details-img">
             </div>
           </div>
         </section>
@@ -163,7 +173,6 @@
       </footer>
     </div>
     <script src="scripts/lib/contentful.browser.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="scripts/main-min.js"></script>
   </body>
 </html>

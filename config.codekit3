@@ -54,6 +54,28 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/assets/images/home-details-01.jpg": {
+		"ft": 16384,
+		"iS": 39592,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/home-details-01.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/assets/images/home-details-02.jpg": {
+		"ft": 16384,
+		"iS": 72306,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/home-details-02.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/home-image-2.jpg": {
 		"ft": 16384,
 		"iS": 218729,

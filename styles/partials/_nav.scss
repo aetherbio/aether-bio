@@ -1,6 +1,11 @@
 //Nav
 
+body.nav-active {
+  overflow: hidden;
+}
+
 .site-nav {
+  display: inline-flex;
   &.inactive {
     display: none;
   }
@@ -8,6 +13,9 @@
     &.active {
       .site-nav-list {
         display: block;
+        z-index: 999;
+        position: fixed;
+        height: calc(100vh - 75px);
       }
       .site-nav-toggle {
         span {
@@ -71,6 +79,8 @@
     }
   }
   &-toggle {
+    background-color: transparent;
+    border: 0;
     @include breakpoint(mobile) {
       width: 34px;
       height: 19px;

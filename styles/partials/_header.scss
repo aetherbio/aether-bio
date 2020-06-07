@@ -6,16 +6,20 @@
   justify-content: space-between;
   align-items: center;
   padding-left: $pad-section;
-  padding-right: 20px;
+  padding-right: 40px;
   z-index: $index-nav;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  background-color: $color-section-bg;
+  .section-inner {
+    display: flex;
+    justify-content: space-between;
+  }
   @include breakpoint(mobile) {
     padding-left: 34px;
   }
-
+  &-title {
+    display: inline-flex;
+  }
   &-logo {
     width: 22vw;
     max-width: 250px;

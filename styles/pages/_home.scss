@@ -2,8 +2,26 @@
   &-values-container {
     margin-top: 60px;
   }
+  &-quote-inner {
+    display: flex;
+    > * {
+      display: inline-flex;
+    }
+  }
   &-quote {
-    font-size: 30px;
+    font-size: 21px;
+    color: $color-gray;
+    font-weight: 300;
+    &:before {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 100%;
+      background-color: $color-orange;
+      transform: translateX(-30px);
+      padding: 10px 0;
+      align-self: center;
+    }
     @include breakpoint(tablet) {
       font-size: 24px;
     }
@@ -41,6 +59,48 @@
   }
   &-video-text-container {
     margin-top: 50px;
+    .video {
+      &-text-bar {
+        margin: 75px auto 45px auto;
+        height: 2px;
+        background-color: $color-orange;
+        width: 320px;
+      }
+      &-text-title {
+        font-size: 36px;
+        width: 44.5vw;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+  &-technologies-container {
+    display: flex;
+    justify-content: space-between;
+    width: 72vw;
+    margin-top: 35px;
+    @include breakpoint(mobile){
+      display: block;
+      width: 100%;
+    }
+    .technology {
+      &-container {
+        width: 33vw;
+        @include breakpoint(mobile){
+          width: 100%;
+        }
+      }
+      &-number {
+        color: $color-orange;
+        font-size: 72px;
+        font-weight: bold;
+        @include font-raj;
+        margin: 0;
+      }
+      &-description {
+        font-size: 21px;
+      }
+    }
   }
   &-people-section {
     .content-section-title-text {
@@ -66,6 +126,62 @@
       margin-top: 0;
       padding-bottom: 60px;
     }
+  }
+  &-details-row {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(mobile){
+      &.row-2 {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  &-details-col {
+    flex-basis: 50%;
+    width: 50%;
+    @include breakpoint(mobile){
+      width: 100%;
+      flex-basis: 100%;
+    }
+  }
+  &-details-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+  &-details-inner {
+    width: 74%;
+    display: flex;
+    &.vertical {
+      flex-direction: column;
+    }
+  }
+  &-details-p-outer {
+    display: flex;
+  }
+  &-details-p {
+    color: $color-gray-lt;
+    font-size: 21px;
+    display: inline-flex;
+    &:before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 2px;
+      background-color: $color-orange;
+      display: inline-flex;
+      margin-right: 30px;
+      padding: 10px 0;
+      align-self: center;
+    }
+  }
+  &-details-button-container {
+    margin-top: 60px;
+  }
+  &-details-img {
+    height: 100%;
+    object-fit: cover;
   }
   
 }
