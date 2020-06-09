@@ -268,6 +268,17 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/scripts/lib/rich-text-html-renderer.es5.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/scripts/lib/rich-text-html-renderer.es5.min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/scripts/main-min.js": {
 		"bF": 0,
 		"ft": 64,

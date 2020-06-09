@@ -35,8 +35,10 @@ const mainModule = (function(document) {
   getHomePageData = function(){
     client.getEntry(ENTRIES.home)
     .then(function (entry) {
-      const {introTitleLine1, bodyCopy, valuesTitle,introVideo,introVideoMp4, videoPoster, vimeoVideoId } = entry.fields;
+      console.log(entry.fields);
+      const {introTitleLine1, bodyCopy, videoTitle2, valuesTitle,introVideo,introVideoMp4, videoPoster, vimeoVideoId } = entry.fields;
       addContent(introTitleLine1,'.page-intro-title');
+      addContent(videoTitle2,'.video-text-title',true);
       addContent(bodyCopy,'.home-quote');
       addIntroVideo(introVideo,introVideoMp4,videoPoster,'.page-intro-video');
       addVideo(vimeoVideoId,'.video-iframe');
@@ -153,11 +155,15 @@ const mainModule = (function(document) {
     document.body.classList.toggle('nav-active');
   }
 
-  addContent = function(content,$selector){
+  addContent = function(content,$selector, isRich = false){
     if (content){
       const $el = document.querySelector($selector);
       if ($el){
-        $el.innerHTML = content;
+        if (isRich){
+          $el.innerHTML = documentToHtmlString(content);
+        } else {
+          $el.innerHTML = content;
+        }
       } else {
         console.error('DOM element does not exist',$selector);
       }
