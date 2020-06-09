@@ -21,7 +21,6 @@ const mainModule = (function(document) {
       accessToken: 'wDINDuN3Vtyxq0orSCGfl7m3jFaJopZs3jCE5KNBPfk'
     });
     page = document.querySelector('body').id;
-    console.log(page);
     if (page === 'home'){
       getHomePageData();
     } else if (page === 'about'){
@@ -133,7 +132,6 @@ const mainModule = (function(document) {
     }
     const isVideoPlaying = checkIfVideoPlaying(document.querySelector('.page-intro-video'));
     hasScrolled = true;
-    console.log(isVideoPlaying);
     if (!isVideoPlaying){
       playIntroVideo();
     }
@@ -195,7 +193,6 @@ const mainModule = (function(document) {
   }
 
   addIntroVideo = function(webm,mp4,videoPoster,$selector){
-    console.log(videoPoster);
     const $el = document.querySelector($selector);
     if ($el){
       let sources = '';
