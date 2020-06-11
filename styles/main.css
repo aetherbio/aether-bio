@@ -461,6 +461,9 @@ body.loading .loader-container {
     .footer-link:hover {
       text-decoration: none; }
 
+.home-intro-section {
+  overflow: hidden; }
+
 .home-values-container {
   margin-top: 60px; }
 
