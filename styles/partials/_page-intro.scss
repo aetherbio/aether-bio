@@ -26,12 +26,21 @@
       height: 250px;
     }
   }
+  &-video-inner {
+    z-index: 3;
+  }
   &-video + .section-inner {
     pointer-events: none;
     a,
     button {
       pointer-events: all;
     }
+  }
+  &-video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
   }
   &-video {
     width: 100%;
@@ -40,6 +49,17 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+  }
+  &-video-wash {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background-color: rgba(0,0,0,.16);
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 
   &-title {

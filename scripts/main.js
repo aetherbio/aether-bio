@@ -15,6 +15,16 @@ const mainModule = (function(document) {
     configureContent();
   }
 
+  addVideoLoader = function(){
+    const video = document.querySelector('.page-intro-video');
+    video.addEventListener('canplaythrough', (event) => {
+      setTimeout(()=>{
+        console.log('can play through');
+        document.querySelector('body').classList.toggle('loading',false);
+      },1000);
+    });
+  }
+
   configureContent = function(){
     client = contentful.createClient({
       space: 'nbpmbu0iyv08',
@@ -22,39 +32,13 @@ const mainModule = (function(document) {
     });
     page = document.querySelector('body').id;
     if (page === 'home'){
-      getHomePageData();
+      addVideoLoader();
     } else if (page === 'about'){
-      //getAboutPageData();
       getValuesData();
     }
     addSiteListeners();
     getBusinessData();
   }
-
-  getHomePageData = function(){
-    client.getEntry(ENTRIES.home)
-    .then(function (entry) {
-      const {introTitleLine1, bodyCopy, valuesTitle,introVideo,introVideoMp4, videoPoster, vimeoVideoId } = entry.fields;
-      addContent(introTitleLine1,'.page-intro-title');
-      addContent(bodyCopy,'.home-quote');
-      addIntroVideo(introVideo,introVideoMp4,videoPoster,'.page-intro-video');
-      addVideo(vimeoVideoId,'.video-iframe');
-    });
-  }
-
-  /*getAboutPageData = function(){
-    client.getEntry(ENTRIES.about)
-    .then(function (entry) {
-      const {introTitleLine1, introTitleLine2, introImage, introButtonText, valuesTitle, peopleDescription} = entry.fields;
-    
-      addContent(introTitleLine1,'.people-section-line1');
-      addContent(introTitleLine2,'.people-section-line2');
-      addContent(peopleDescription,'.home-people-text');
-      addImage(introImage,'.home-people-image');
-      addContent(valuesTitle,'.home-values-title');
-
-    });
-  }*/
 
   getValuesData = function(){
     client.getEntries({
@@ -192,24 +176,6 @@ const mainModule = (function(document) {
     }
   }
 
-  addIntroVideo = function(webm,mp4,videoPoster,$selector){
-    const $el = document.querySelector($selector);
-    if ($el){
-      let sources = '';
-      if (webm){
-        const webmSource = `<source src='${webm.fields.file.url}' type='video/webm'/>`;
-        sources += webmSource;
-      }
-
-      if (mp4){
-        const mp4Source = `<source src='${mp4.fields.file.url}' type='video/mp4'/>`;
-        sources += mp4Source;
-      }
-      $el.innerHTML = sources;
-      $el.setAttribute("poster",videoPoster.fields.file.url);
-    }
-  }
-
   addVideo = function(id,$selector){
     if (id){
       const $el = document.querySelector($selector);
@@ -239,6 +205,6 @@ const mainModule = (function(document) {
   };
 })(document);
 
-window.onload = function(){
+document.addEventListener("DOMContentLoaded", function(){
   mainModule.init();
-}
+});

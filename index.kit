@@ -33,20 +33,30 @@
     </script>
   </head>
 
-  <body id="home">
+  <body id="home" class="loading">
     <div class="site-container">
       <!-- @import "./includes/header.kit" -->
       <main class="site-main">
         <section class="page-intro-section home-intro-section">
-          <video
-            class="page-intro-video"
-            muted
-            loop
-          >
-          </video>
-          <div class="section-inner">
+          <div class="page-intro-video-container">
+              <video
+                class="page-intro-video"
+                muted
+                loop
+                preload="metadata"
+                autoplay
+                playsinline
+                poster="assets/images/intro-video-poster.jpg"
+              >
+              <source src='assets/videos/aether-intro.webm' type='video/webm'/>
+              <source src='assets/videos/aether-intro.mp4' type='video/mp4'/>
+            </video>
+            <div class="page-intro-video-wash"></div>
+          </div>
+          
+          <div class="section-inner page-intro-video-inner">
             <div class="content-section-inner">
-              <h2 class="page-intro-title"></h2>
+              <h2 class="page-intro-title">Catalyze a new industrial revolution.</h2>
               <a
                 href="https://boards.greenhouse.io/aetherbiomachines"
                 target="_blank"
@@ -60,7 +70,7 @@
         <section class="content-section white home-quote-section">
           <div class="section-inner">
             <div class="content-section-inner home-quote-inner">
-              <blockquote class="home-quote"></blockquote>
+              <blockquote class="home-quote">Aether engineers enzymes for rapid and low cost manufacturing of molecular products ranging from therapeutics to next generation materials. Through our unprecedented data generation capabilities, Aether is the only company that can design enzymes for almost any chemical process, delivering engineered catalysts in rapid timeframes for complex synthesis problems.</blockquote>
             </div>
           </div>
         </section>
@@ -70,7 +80,7 @@
               <div class="video-container home-video-container">
                 <iframe
                   class="video-iframe"
-                  src=""
+                  src="https://player.vimeo.com/video/386329382?title=0&byline=0&portrait=0"
                   frameborder="0"
                   allow="autoplay; fullscreen"
                   allowfullscreen
@@ -86,7 +96,7 @@
                 <div class="home-technologies-container">
                   <div class="technology-container">
                     <p class="technology-number">01</p>
-                    <p class="technology-description">Our proprietary robotic factor that runs orders of magnitude more experiments than previously possible.</p>
+                    <p class="technology-description">Our proprietary robotic factory that runs orders of magnitude more experiments than previously possible.</p>
                   </div>
                   <div class="technology-container">
                     <p class="technology-number">02</p>
@@ -127,6 +137,11 @@
         </section>
       </main>
       <!-- @import "./includes/footer.kit" -->
+    </div>
+    <div class="loader-container">
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+      </div>
     </div>
     <script src="scripts/lib/contentful.browser.min.js"></script>
     <script src="scripts/main-min.js"></script>

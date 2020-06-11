@@ -197,6 +197,42 @@ body.nav-active {
     .button-link.white:hover {
       background-color: #FC593A; }
 
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: white; }
+
+.loader-inner {
+  position: relative; }
+
+.loader-spinner {
+  width: 80px;
+  height: 80px;
+  margin: 100px auto;
+  background-color: #FC593A;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out; }
+
+body.loading .loader-container {
+  display: flex; }
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0; } }
+
 .content-section {
   background-color: #242A2D;
   color: #fff;
@@ -317,11 +353,19 @@ body.nav-active {
   @media (max-width: 767px) {
     .page-intro-section {
       height: 250px; } }
+.page-intro-video-inner {
+  z-index: 3; }
+
 .page-intro-video + .section-inner {
   pointer-events: none; }
   .page-intro-video + .section-inner a,
   .page-intro-video + .section-inner button {
     pointer-events: all; }
+
+.page-intro-video-container {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
 
 .page-intro-video {
   width: 100%;
@@ -329,7 +373,18 @@ body.nav-active {
   object-fit: cover;
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 1; }
+
+.page-intro-video-wash {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.16);
+  position: absolute;
+  left: 0;
+  top: 0; }
 
 .page-intro-title {
   font-family: 'Rajdhani', sans-serif;
@@ -422,6 +477,7 @@ body.nav-active {
     content: '';
     display: block;
     width: 2px;
+    min-width: 2px;
     height: 100%;
     background-color: #FC593A;
     transform: translateX(-30px);
@@ -546,6 +602,7 @@ body.nav-active {
     display: block;
     height: 100%;
     width: 2px;
+    min-width: 2px;
     background-color: #FC593A;
     display: inline-flex;
     margin-right: 30px;

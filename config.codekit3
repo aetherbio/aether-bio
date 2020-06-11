@@ -179,6 +179,17 @@
 		"oF": 0,
 		"opt": 1
 		},
+	"/assets/images/intro-video-poster.jpg": {
+		"ft": 16384,
+		"iS": 26988,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/assets/images/intro-video-poster.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/assets/images/logo-orange-white.png": {
 		"ft": 32768,
 		"iS": 4334,
@@ -189,6 +200,22 @@
 		"opt": 1,
 		"oT": 1,
 		"q": 100
+		},
+	"/assets/videos/aether-intro.mp4": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/assets/videos/aether-intro.mp4",
+		"oF": 0
+		},
+	"/assets/videos/aether-intro.webm": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/assets/videos/aether-intro.webm",
+		"oF": 0
 		},
 	"/favicon.ico": {
 		"cB": 0,
@@ -264,17 +291,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/scripts/lib/contentful.browser.min-min.js",
-		"oF": 0,
-		"sC": 0,
-		"tS": 0
-		},
-	"/scripts/lib/rich-text-html-renderer.es5.min.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/scripts/lib/rich-text-html-renderer.es5.min-min.js",
 		"oF": 0,
 		"sC": 0,
 		"tS": 0

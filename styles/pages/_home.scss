@@ -16,6 +16,7 @@
       content: '';
       display: block;
       width: 2px;
+      min-width: 2px;
       height: 100%;
       background-color: $color-orange;
       transform: translateX(-30px);
@@ -165,6 +166,7 @@
       display: block;
       height: 100%;
       width: 2px;
+      min-width: 2px;
       background-color: $color-orange;
       display: inline-flex;
       margin-right: 30px;
