@@ -586,7 +586,9 @@ body.loading .loader-container {
   justify-content: center;
   align-items: center;
   padding: 20px 0; }
-
+  @media (max-width: 767px) {
+    .home-details-content-container {
+      padding: 35px; } }
 .home-details-inner {
   width: 74%;
   display: flex; }
