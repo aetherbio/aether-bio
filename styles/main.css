@@ -397,7 +397,7 @@ body.loading .loader-container {
       width: 100%; } }
   @media (max-width: 767px) {
     .page-intro-title {
-      font-size: 30px; } }
+      font-size: 33px; } }
 .page-intro-image-container {
   position: absolute;
   bottom: 0;
@@ -619,3 +619,6 @@ body.loading .loader-container {
 .home-details-img {
   height: 100%;
   object-fit: cover; }
+  @media (max-width: 767px) {
+    .home-details-img {
+      display: block; } }
